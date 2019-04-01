@@ -8,8 +8,6 @@
 
 'use strict';
 
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-
 // Imports dependencies and set up http server
 const
   express = require('express'),
@@ -32,7 +30,7 @@ function callSendAPI(sender_psid, response) {
 	// Send the HTTP request to the Messenger Platform
 	request({
 		"uri": "https://graph.facebook.com/v2.6/me/messages",
-		"qs": { "access_token": PAGE_ACCESS_TOKEN },
+		"qs": { "access_token": "EAAH4r8j8jTIBAKOnZB8rWT6yx9vRuyw21zcOVgw1m0ZCg8SYp7G4FXJtrrkis8ZB07g59IM2uk4rYQGgzudaQZB8TZAFbD1ZAfaY3rKKHJMPgK3jW7QkGknrtdOl1gqucjo9ypPBRl05iDGjsvNobDftbDPeHHgf7MwQrRtMq06Lsge9ZBXZC1wSY0o866LspNAZD" },
 		"method": "POST",           
 		"json": request_body
 	}, (err, res, body) => {
