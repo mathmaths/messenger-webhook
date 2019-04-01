@@ -4,7 +4,7 @@
 // ainsi l'url final est : https://91c22c36.ngrok.io/webhook?hub.verify_token=soudure&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe
 // pour que le webhook de l'app facebook soit vérifier il faut que le webhook soit activé avec node index.js en local
 // curl -H "Content-Type: application/json" -X POST "localhost:1337/webhook" -d '{"object": "page", "entry": [{"messaging": [{"message": "TEST_MESSAGE"}]}]}'
-//  
+//  avec clever-cloud url fixe https://mathmaths.cleverapps.io/webhook?hub.verify_token=soudure&hub.challenge=CHALLENGE_ACCEPTED&hub.mode=subscribe
 
 'use strict';
 
@@ -30,7 +30,7 @@ function callSendAPI(sender_psid, response) {
 	// Send the HTTP request to the Messenger Platform
 	request({
 		"uri": "https://graph.facebook.com/v2.6/me/messages",
-		"qs": { "access_token": "EAAH4r8j8jTIBAKOnZB8rWT6yx9vRuyw21zcOVgw1m0ZCg8SYp7G4FXJtrrkis8ZB07g59IM2uk4rYQGgzudaQZB8TZAFbD1ZAfaY3rKKHJMPgK3jW7QkGknrtdOl1gqucjo9ypPBRl05iDGjsvNobDftbDPeHHgf7MwQrRtMq06Lsge9ZBXZC1wSY0o866LspNAZD" },
+		"qs": { "access_token": "EAAH4r8j8jTIBACJ07dACZCx7P9ltyBHII3kB9Q6PVvZBYvq3eA9zR582wxqHLNUOzrVtFoNvYNFz0hWEg2nVSPiVucMrZB3kNzlWXxZAYg4sriQODdWYG9fZCa6cHZAjKbZA1H4Pm5gfccZBkbwcKKoNxWT7SBlo3VCfxvZBdvto8BiFg6Xh6ihh1yKPN7moc4TEZD" },
 		"method": "POST",           
 		"json": request_body
 	}, (err, res, body) => {
